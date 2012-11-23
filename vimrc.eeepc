@@ -1,0 +1,21 @@
+" Can be: linux, mac, windows
+fun! MySys()
+	return "linux"
+endfun
+
+" Special settings
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+set guifontset=Bitstream\ Vera\ Sans\ Mono\ 9
+set guifontwide=Bitstream\ Vera\ Sans\ Mono\ 9
+
+set listchars=eol:↓,tab:»\ ,trail:.,extends:…
+
+" Change dir shortcuts
+let g:Context="private"
+let g:FullName="Johan Segolsson"
+let g:ORGANIZATION_NAME="Johan Segolsson"
+let g:Email="johan.segolsson@gmail.com"
+
+" This turns of the mouse insert mode, useful since the mousepad is sometimes
+" a bit over sensitive
+set mouse=nvcr

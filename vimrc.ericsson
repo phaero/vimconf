@@ -1,0 +1,73 @@
+" I 'want' to use spaces as tabs at ericsson
+set sta
+set et
+
+set gfn=Bitstream\ Vera\ Sans\ Mono\ 11
+
+" Load ccase
+"let loaded_ccase = 0
+"let g:autotagCtagsLvl=2
+"let g:autotagCtagsArgs="--language-force=c++ --extra=+q --fields=+i"
+
+set tags=tags;/vobs/tspsaf/
+
+" I want to use a swap file but it should be put in the temp directory
+if $HOSTNAME == "seasc0226.dyn.rnd.as.sw.ericsson.se"
+    set directory=/local/scratch/vim_tmp
+    set backupdir=/local/scratch/vim_tmp
+else
+    "set directory=/tmp/qsegjoh/vim
+    "set backupdir=/tmp/qsegjoh/vim
+endif
+
+set noswapfile
+set nobackup
+
+command! Chmodw !chmod u+w %
+
+" Important pyvim variables
+if $CONTEXT != "private"
+    let g:Context="ericsson"
+    let g:shell='csh'
+    let g:FullName="Johan Segolsson"
+    let g:ORGANIZATION_NAME="Ericsson"
+    let g:Email="johan.segolsson@ericsson.com"
+
+    let g:CodeReviewer_reviewer="JS"
+    let g:CodeReviewer_reviewFile=$HOME . "/review_js.rev"
+else
+    let g:Context="private"
+    let g:shell='csh'
+    let g:FullName="Johan Segolsson"
+    let g:ORGANIZATION_NAME="Johan Segolsson"
+    let g:Email="johan.segolsson@gmail.com"
+endif
+
+"python << EOF
+"
+"# The python path gets totally fucked up then using the vobs so it is easier 
+"# just to rewrite the whole path here to make it look like we haven't a 
+"# view set ( the graphical librarys will be removed though ).
+"
+"import sys
+"
+"local_paths = [ p for p in sys.path if p.startswith( '/home' ) or 
+"		p.startswith( '/local' ) ]
+"
+"# setup path
+"sys.path = [
+"    '/app/python/2.6.2/LMWP2/lib/python26.zip',
+"    '/app/python/2.6.2/LMWP2/lib/python2.6',
+"    '/app/python/2.6.2/LMWP2/lib/python2.6/plat-linux2',
+"#    '/app/python/2.6.2/LMWP2/lib/python2.6/lib-tk',
+"#    '/app/python/2.6.2/LMWP2/lib/python2.6/lib-old',
+"    '/app/python/2.6.2/LMWP2/lib/python2.6/lib-dynload',
+"    '/app/python/2.6.2/LMWP2/lib/python2.6/site-packages',
+"]
+"
+"for path in local_paths[::-1]:
+"	sys.path.insert( 0, path )
+"
+"sys.path.insert( 0, '.' )
+"
+"EOF

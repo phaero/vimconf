@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.py
+doc/README
+vtmpl/__init__.py
+vtmpl/common.py
+vtmpl/plugin.py
+vtmpl/script.py
+vtmpl.egg-info/PKG-INFO
+vtmpl.egg-info/SOURCES.txt
+vtmpl.egg-info/dependency_links.txt
+vtmpl.egg-info/entry_points.txt
+vtmpl.egg-info/not-zip-safe
+vtmpl.egg-info/requires.txt
+vtmpl.egg-info/top_level.txt

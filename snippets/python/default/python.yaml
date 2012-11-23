@@ -1,0 +1,57 @@
+name: python
+id: ab959a74-7d43-11de-832a-0019dbf69151
+author: Johan Segolsson
+email: johan.segolsson@gmail.com
+---
+name: Main func
+cursor: placeholder
+trigger_type: tab
+trigger: if
+content: |
+    import sys
+
+    def main():
+        """
+        «»
+        """
+        args = sys.argv[1:]
+        «»
+
+        return 0
+
+    if __name__ == '__main__':
+        sys.exit( main() )
+---
+name: Class definition
+cursor: placeholder
+trigger_type: tab
+trigger: class
+content: |
+    class «»( «» ):
+        """
+        «»
+        """
+
+        def __init__( self, «» ):
+            """
+            «»
+            """
+            «»
+---
+name: If statement
+cursor: placeholder
+trigger_type: tab
+trigger: if
+content: |
+    if «»:
+        «»
+---
+name: If-else statement
+cursor: placeholder
+trigger_type: tab
+trigger: ife
+content: |
+    if «»:
+        «»
+    else:
+        «»

@@ -1,0 +1,28 @@
+" Can be: linux, mac, windows
+fun! MySys()
+	return "linux"
+endfun
+
+" Trying out a new font
+set guifont=Liberation\ Mono\ 10
+set guifontset=Liberation\ Mono\ 10
+set guifontwide=Liberation\ Mono\ 10
+
+" XTerms support UTF chars
+set listchars=eol:↓,tab:»\ ,trail:.,extends:…
+
+" Special settings
+" Se 'help ft-c-omni'
+"autocmd FileType c set tags+=~/.vim/systags
+"autocmd FileType cpp set tags+=~/.vim/systags
+
+" Change dir shortcuts
+"cmap cpj chdir ~/projects
+"cmap cpv chdir ~/projects/vim
+"cmap cpu chdir ~/projects/vim-util
+"cmap cpy chdir ~/projects/python
+
+let g:Context="private"
+let g:FullName="Johan Segolsson"
+let g:ORGANIZATION_NAME="Johan Segolsson"
+let g:Email="johan.segolsson@gmail.com"

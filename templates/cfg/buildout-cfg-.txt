@@ -1,0 +1,14 @@
+[buildout]
+parts = test py
+develop = .
+
+[test]
+recipe = zc.recipe.testrunner
+eggs = mock
+       «»
+defaults = '--tests-pattern _tests$ -v  --exit-with-status -1 --auto-color'.split()
+working-directory = ${buildout:directory}
+
+[py]
+recipe = zc.recipe.egg
+eggs = «»

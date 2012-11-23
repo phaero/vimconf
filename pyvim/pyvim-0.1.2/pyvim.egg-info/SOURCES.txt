@@ -1,0 +1,16 @@
+MANIFEST.in
+setup.py
+doc/README
+doc/TODO
+doc/example_plugin.py
+plugin/pyvim.vim
+pyvim/__init__.py
+pyvim/main.py
+pyvim/plugin.py
+pyvim/vimh.py
+pyvim.egg-info/PKG-INFO
+pyvim.egg-info/SOURCES.txt
+pyvim.egg-info/dependency_links.txt
+pyvim.egg-info/not-zip-safe
+pyvim.egg-info/requires.txt
+pyvim.egg-info/top_level.txt

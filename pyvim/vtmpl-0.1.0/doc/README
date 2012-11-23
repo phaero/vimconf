@@ -1,0 +1,10 @@
+This is a TemplateManager for Vim.
+
+
+Installation
+------------
+Install using easy_install or just add the top vtmpl directory to the pythonpath.
+
+Requires
+--------
+PyVim >= 0.0.4

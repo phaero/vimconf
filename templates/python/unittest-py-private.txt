@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+"""
+${VIM:expand("%")}
+
+Created by ${VIM:FullName} on ${:date +%F}.
+Copyright (c) ${:date +%Y} ${VIM:ORGANIZATION_NAME}. All rights reserved.
+"""
+
+import unittest
+
+class ${VIM:expand("%:t:r")}(unittest.TestCase):
+	def setUp(self):
+		pass
+
+if __name__ == '__main__':
+	unittest.main()

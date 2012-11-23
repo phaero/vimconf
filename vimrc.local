@@ -1,0 +1,10 @@
+" Can be: linux, mac, windows
+fun! MySys()
+	return "linux"
+endfun
+
+"profile start /home/qsegjoh/profile
+
+"set runtimepath=~/projects/vim,$VIMRUNTIME
+source ~/.vim/vimrc
+source ~/.vimrc.local

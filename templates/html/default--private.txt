@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv">
+	<head>
+		<meta name="generator" content="gvim" />
+		<meta name="author" content="${VIM:FullName}" />
+		<meta name="copyright" content="${:date +%Y}" />
+		<meta name="keywords" content="" />
+		<meta name="description" content=""/>
+
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+		<meta http-equiv="Expires" content="now" />
+
+		<link rel="stylesheet" type="text/css" href="css/style.css"
+			media="all" />
+		<link rel="stylesheet" type="text/css" href="css/layout.css"
+			media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/layout-print.css"
+			media="print" />
+		<link rel="stylesheet" type="text/css" href="css/style-screen.css"
+			media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/style-print.css"
+			media="print" />
+
+		<title>Title</title>
+	</head>
+	<body>
+		<h1>Title</h1>
+		<p>Text</p>
+	</body>
+</html>

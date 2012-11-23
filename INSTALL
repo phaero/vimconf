@@ -1,0 +1,10 @@
+To install this set of vim settings to the following things.
+
+* Create a symlink ~/.vim/ to this folder.
+* Create a symlink ~/.vimrc to ~/.vim/vimrc.local
+* Create a symlink ~/.vimrc.local to ~/.vim/vimrc.<context>
+
+The PyVim modules are also installed under pyvim in this folder. To easier support different versions the pyvim and vtmpl folder have been symlink the the versioned folders.
+
+* pyvim 0.1.0
+* vtmpl 0.1.0

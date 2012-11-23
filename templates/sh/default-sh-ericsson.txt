@@ -1,0 +1,142 @@
+#! /bin/sh
+##
+## template.sh --
+##
+##   Convenient template for shell-scripts. A number of sub-commands
+##   are contained in one script. New sub-commands, and their documentation,
+##   can be added easily.
+##
+##   The script contains handling of long options that is a bit dubious.
+##
+##   Some care has been taken to get quoted parameters right, which is not
+##   always trivial. It also creates a temprary directory and handles
+##   signals (e.g. Ctrl-C) so that it is cleaned up properly.
+##
+##   DO NOT USE "/bin/bash"!! To use "/bin/sh" is a minor
+##   inconveniance when writing scripts (interactive use is a
+##   different story), but the script becomes way more portable.
+##
+##   The script should be self-contained, so do NOT include some
+##   cool script-function-library (no matter how cool it is).
+##
+## Commands;
+##
+
+prg=`basename $0`
+dir=`dirname $0`; dir=`cd $dir; pwd`
+tmp=/tmp/${prg}$$
+
+die() {
+    echo "ERROR: $*" >&2
+    rm -rf $tmp
+    exit 1
+}
+help() {
+    grep '^##' $0 | cut -c3-
+    exit 0
+}
+test -n "$1" || help
+
+
+# The "[" alias is EVIL! (personal opinion)
+# ----------------------
+# Avoid the "[" built-in alias (to "test"), use "test" command directly.
+# "[" is not a part of the shell "language", and everybody makes the 
+# misstake of "if [-r aFile]; then ...", wondering why the hell it doesn't
+# work. It also leads to silly constructs like;
+
+env | grep -q $USER
+if [ $? != 0 ]; then
+    die "Not in env [$USER]"
+fi
+
+# One tends to forget the nature of conditions in "sh" (RTFM) and
+# think that "[" is the "right" (or the only) way. It's not! Better
+# would be;
+if ! env | grep -q $USER; then
+    die "Not in env [$USER]"
+fi
+
+# Or even better;
+env | grep -q $USER || die "Not in env [$USER]"
+
+
+
+
+##  help
+##    Help-printout, including additional commands.
+##
+cmd_help() {
+    grep '^##' $0 | cut -c3-
+    grep '^#-' $0 | cut -c3-
+}
+
+#-  internal
+#-    This command is not intended for normal use. For instance it is
+#-    often a good idea to break up a function into smaller command and
+#-    then implement a "real" command that invokes several others.
+#-
+cmd_internal() {
+    cmd_test "$@"
+    cmd_info
+}
+
+##  test [long-opts...] [params...]
+##    Simple test command. Example;
+##
+##       test --dir="Kalle Nisse Gurra" --verbose 1 "2 3"
+##
+cmd_test() {
+    # Note the syntax for allowing spaces in parameters!
+    for n in "$@"; do
+	echo "=== [$n]"
+    done
+    for n in $long_opts; do
+	eval "v=\"\$$n\""
+	echo "=== $n=[$v]"
+    done
+}
+
+##  sleep [seconds]
+##    Sleep for some time. Lets you hit ctrl-C and trig the INT trap.
+##
+cmd_sleep() {
+    sleep 0$1
+}
+
+##  info
+##    Print some internal info.
+##
+cmd_info() {
+    echo "prg=[$prg]"
+    echo "tmp=[$tmp]"
+    echo "dir=[$dir]"
+    # (note that $dir is "normalized")
+}
+
+
+# Get the command
+cmd=$1
+shift
+grep -q "^cmd_$cmd()" $0 || die "Invalid command [$cmd]"
+
+# Handle long-options
+while echo "$1" | grep -q '^--'; do
+    o=`echo "$1" | sed -e 's,--,opt_,' -e 's,=\(.*\),="\1",'`
+    if echo $o | grep -q =; then
+	eval $o
+    else
+	eval "$o=yes"
+    fi
+    shift
+done
+unset o
+long_opts=`set | grep opt_ | cut -d= -f1`
+
+# Execute command
+trap "die Interrupted" INT TERM
+mkdir -p $tmp
+cmd_$cmd "$@"
+status=$?
+rm -rf $tmp
+exit $status

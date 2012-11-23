@@ -1,0 +1,20 @@
+name: cpp
+id: db2cac45-2eab-4db4-ac0a-138634f42295
+author: Johan Segolsson
+email: johan.segolsson@gmail.com
+---
+name: Include global
+cursor: placeholder
+trigger_type: tab
+trigger: ing
+content: |
+    #include <«»>
+    «»
+---
+name: Include local
+cursor: placeholder
+trigger_type: tab
+trigger: inl
+content: |
+    #include "«»"
+    «»

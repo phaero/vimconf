@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by ${VIM:FULLNAME} on ${:date +%F}. -->
+<!-- Copyright (c) ${:date +%Y} ${VIM:ORGANIZATION_NAME}. All rights reserved. -->
+«»

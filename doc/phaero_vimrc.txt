@@ -1,0 +1,18 @@
+*phaero_vimrc.txt*	For Vim version 6.0 and up                       v0.01
+             LAST MODIFICATION: ""
+
+		  VIM REFERENCE MANUAL    by Johan Segolsson
+Author: Johan Segolsson <johan dot segolsson at gmail dot com>
+
+==============================================================================
+
+Contents:
+  |phaero_vimrc-overview|      1. Overview
+
+==============================================================================
+
+1. Overview			        *phaero_vimrc-overview* *phaero_vimrc*
+
+This is my help file, create your own !!
+
+;)

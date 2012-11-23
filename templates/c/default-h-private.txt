@@ -1,0 +1,6 @@
+#ifndef «»_H_INCLUDES__
+#define «»_H_INCLUDES__
+
+«»
+
+#endif
