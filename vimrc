@@ -148,11 +148,6 @@ set termencoding=utf-8
 nmap <leader>fd :se ff=dos<cr>
 nmap <leader>fu :se ff=unix<cr>
 
-" Setup Markdown syntax
-augroup mkd
-	autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
-augroup END
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM userinterface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
