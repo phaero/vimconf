@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ln -s ~/p/vimconf ~/.vim
+ln -s ~/.vim/vimrc.local ~/.vimrc
+ln -s ~/.vim/vimrc.ericsson ~/.vimrc.local
