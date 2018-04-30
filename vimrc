@@ -701,6 +701,16 @@ Plug 'shougo/neocomplete.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'rust-lang/rust.vim'
+Plug 'neomake/neomake'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " Plugin settings
@@ -717,3 +727,6 @@ let g:lightline = {
 
 " nerdtree
 map <f2> :NERDTreeToggle<cr>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
