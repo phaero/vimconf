@@ -687,3 +687,33 @@ endfunction
 let html_number_lines = 0
 let use_xhtml = 1
 let html_use_css = 1
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'danro/rename.vim'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'shougo/neocomplete.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'vim-syntastic/syntastic'
+call plug#end()
+
+" Plugin settings
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+
+" nerdtree
+map <f2> :NERDTreeToggle<cr>
