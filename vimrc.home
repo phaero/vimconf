@@ -4,9 +4,9 @@ fun! MySys()
 endfun
 
 " Trying out a new font
-set guifont=Liberation\ Mono\ 10
-set guifontset=Liberation\ Mono\ 10
-set guifontwide=Liberation\ Mono\ 10
+set guifont=Liberation\ Mono\ 11
+set guifontset=Liberation\ Mono\ 11
+set guifontwide=Liberation\ Mono\ 11
 
 " XTerms support UTF chars
 set listchars=eol:↓,tab:»\ ,trail:.,extends:…
