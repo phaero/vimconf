@@ -166,3 +166,13 @@
 "	endfun
 "	
 "	autocmd FileType cpp :call <SID>abbrev_cpp()
+
+" Setup Markdown syntax
+augroup mkd
+	autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
+" Setup waf wscript syntax
+augroup wscript
+	autocmd BufRead wscript set ft=python
+augroup END
