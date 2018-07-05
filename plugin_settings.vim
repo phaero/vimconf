@@ -120,3 +120,6 @@ map <leader>L :TaskList<cr>
 nmap <leader>B :FufBuffer<cr>
 nmap <leader>F :FufFile<cr>
 nmap <leader>T :FufTag<cr>
+
+" Rust.vim
+let g:rustfmt_autosave = 1
