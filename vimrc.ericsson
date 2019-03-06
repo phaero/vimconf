@@ -2,7 +2,7 @@
 set sta
 set et
 
-set gfn=Bitstream\ Vera\ Sans\ Mono\ 11
+set gfn=Bitstream\ Vera\ Sans\ Mono\ 10
 
 " Load ccase
 "let loaded_ccase = 0

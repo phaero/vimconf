@@ -723,3 +723,4 @@ map <f2> :NERDTreeToggle<cr>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:go_version_warning = 0
