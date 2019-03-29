@@ -704,6 +704,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'pest-parser/pest.vim'
 call plug#end()
 
 " Plugin settings
